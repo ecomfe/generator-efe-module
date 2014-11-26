@@ -7,7 +7,7 @@ generator-efe-module
 [![DevDependencies](http://img.shields.io/david/dev/ecomfe/generator-efe-module.svg?style=flat-square)](https://david-dm.org/ecomfe/generator-efe-module)
 ========
 
-Ecomfe-style module generator for yeoman.
+EFE-Style nodejs module generator for yeoman.
 
 ### Install
 
