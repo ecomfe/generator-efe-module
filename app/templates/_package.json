@@ -1,10 +1,10 @@
 {
-  "name": "<%= _.slugify(appname) %>",
+  "name": "<%= appname %>",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "<%= _.slugify(appname) %>": "./bin/<%= _.slugify(appname) %>"
+    "<%= appname %>": "./bin/<%= appname %>"
   },
   "dependencies": {
   },
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ecomfe/<%= _.slugify(appname) %>.git"
+    "url": "https://github.com/ecomfe/<%= appname %>.git"
   },
   "keywords": [],
   "author": {
@@ -32,7 +32,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ecomfe/<%= _.slugify(appname) %>/issues"
+    "url": "https://github.com/ecomfe/<%= appname %>/issues"
   },
-  "homepage": "https://github.com/ecomfe/<%= _.slugify(appname) %>"
+  "homepage": "https://github.com/ecomfe/<%= appname %>"
 }

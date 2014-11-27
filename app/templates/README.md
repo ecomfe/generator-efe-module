@@ -1,28 +1,28 @@
-<%= _.slugify(appname) %>
+<%= appname %>
 
-[![Build Status](https://travis-ci.org/ecomfe/<%= _.slugify(appname) %>.svg)](http://travis-ci.org/ecomfe/<%= _.slugify(appname) %>)
-[![NPM version](https://badge.fury.io/js/<%= _.slugify(appname) %>.svg)](http://badge.fury.io/js/<%= _.slugify(appname) %>)
-[![Coverage Status](https://coveralls.io/repos/ecomfe/<%= _.slugify(appname) %>/badge.png)](https://coveralls.io/r/ecomfe/<%= _.slugify(appname) %>)
-[![Dependencies](http://img.shields.io/david/ecomfe/<%= _.slugify(appname) %>.svg?style=flat-square)](https://david-dm.org/ecomfe/<%= _.slugify(appname) %>)
-[![DevDependencies](http://img.shields.io/david/dev/ecomfe/<%= _.slugify(appname) %>.svg?style=flat-square)](https://david-dm.org/ecomfe/<%= _.slugify(appname) %>)
+[![Build Status](https://travis-ci.org/ecomfe/<%= appname %>.svg)](http://travis-ci.org/ecomfe/<%= appname %>)
+[![NPM version](https://badge.fury.io/js/<%= appname %>.svg)](http://badge.fury.io/js/<%= appname %>)
+[![Coverage Status](https://coveralls.io/repos/ecomfe/<%= appname %>/badge.png)](https://coveralls.io/r/ecomfe/<%= appname %>)
+[![Dependencies](http://img.shields.io/david/ecomfe/<%= appname %>.svg?style=flat-square)](https://david-dm.org/ecomfe/<%= appname %>)
+[![DevDependencies](http://img.shields.io/david/dev/ecomfe/<%= appname %>.svg?style=flat-square)](https://david-dm.org/ecomfe/<%= appname %>)
 ========
 
-<%= _.slugify(appname) %> is for ...
+<%= appname %> is for ...
 
 ### Install
 
-	npm i -g <%= _.slugify(appname) %>
+	npm i -g <%= appname %>
 
 ### Usage
 
 * in CLI
 
 	```shell
-	<%= _.slugify(appname) %>
+	<%= appname %>
 	```
 
 * in Node.js
 
 	```javascript
-	var <%= _.slugify(appname) %> = require('<%= _.slugify(appname) %>');
+	var <%= appname %> = require('<%= appname %>');
 	```
