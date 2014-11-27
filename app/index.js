@@ -42,18 +42,18 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
     },
 
     prompting: {
-        askFor: function () {
+        askForGithubAccount: function () {
             var done = this.async();
 
-            this.log(yosay('Create your own ' + chalk.red('Ecomfe-style') + ' module!'));
+            this.log(yosay('Create your own ' + chalk.red('EFE-Style') + ' Node.js module!'));
 
-            var prompts = [{
+            var prompt = {
                 'name': 'githubUser',
                 'message': 'Would you mind telling me your username on GitHub?',
                 'default': 'someuser'
-            }];
+            };
 
-            this.prompt(prompts, function (props) {
+            this.prompt([prompt], function (props) {
                 this.githubUser = props.githubUser;
 
                 done();
@@ -64,15 +64,32 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
             var done = this.async();
             var moduleName = this.appname;
 
-            var prompts = [{
+            var prompt = {
                 'name': 'moduleName',
                 'message': 'What\'s the name of your module?',
                 'default': moduleName
-            }];
+            };
 
-            this.prompt(prompts, function (props) {
+            this.prompt([prompt], function (props) {
                 this.moduleName = props.moduleName;
                 this.appname = this._.slugify(props.moduleName);
+
+                done();
+            }.bind(this));
+        },
+
+        askForDoInstall: function () {
+            var done = this.async();
+
+            var prompt = {
+                'type': 'confirm',
+                'name': 'doInstall',
+                'message': 'Install deps now?',
+                'default': true
+            };
+
+            this.prompt([prompt], function (props) {
+                this.doInstall = props.doInstall;
 
                 done();
             }.bind(this));
@@ -125,7 +142,7 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
     },
 
     end: function () {
-        if (!this.options['skip-install']) {
+        if (!this.options['skip-install'] && this.doInstall) {
             this.npmInstall();
         }
     }

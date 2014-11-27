@@ -12,10 +12,11 @@ describe('ecomfe-module:app', function () {
         runs(function () {
             helpers.run(path.join(__dirname, '../../app'))
                 .inDir(path.join(os.tmpdir(), './temp-test'))
-                .withOptions({'skip-install': true})
+                // .withOptions({'skip-install': true})
                 .withPrompt({
                     githubUser: 'nighca',
-                    moduleName: 'test-module'
+                    moduleName: 'test-module',
+                    doInstall: false
                 }).on('end', function () {
                     done = true;
                 });
