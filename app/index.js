@@ -11,13 +11,6 @@ var github = new GitHubApi({
     version: '3.0.0'
 });
 
-if (process.env.GITHUB_TOKEN) {
-    github.authenticate({
-        type: 'oauth',
-        token: process.env.GITHUB_TOKEN
-    });
-}
-
 var emptyGithubRes = {
     'name': '',
     'email': '',
@@ -76,23 +69,6 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
                 done();
             }.bind(this));
-        },
-
-        askForDoInstall: function () {
-            var done = this.async();
-
-            var prompt = {
-                'type': 'confirm',
-                'name': 'doInstall',
-                'message': 'Install deps now?',
-                'default': true
-            };
-
-            this.prompt([prompt], function (props) {
-                this.doInstall = props.doInstall;
-
-                done();
-            }.bind(this));
         }
     },
 
@@ -138,12 +114,6 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
             this.template('_package.json', 'package.json');
             this.template('README.md');
-        }
-    },
-
-    end: function () {
-        if (!this.options['skip-install'] && this.doInstall) {
-            this.npmInstall();
         }
     }
 });
