@@ -105,7 +105,7 @@ describe('ecomfe-module:app', function () {
                 'LICENSE'
             ]);
 
-            var packageInfo = require(path.join(os.tmpdir(), './temp-test', 'test-module/package.json'));
+            var packageInfo = require(path.join(os.tmpdir(), './temp-test3', 'test-module/package.json'));
             assert.deepEqual(packageInfo.author, {
                 name: '',
                 email: '',
