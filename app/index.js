@@ -1,3 +1,8 @@
+/**
+ * @file main file of app
+ * @author nighca<nighca@live.cn>
+ */
+
 'use strict';
 
 var util = require('util');
@@ -105,7 +110,7 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
         projectfiles: function () {
             this.src.copy('editorconfig', '.editorconfig');
-            this.src.copy('eslintrc', '.eslintrc');
+            this.src.copy('fecsrc', '.fecsrc');
             this.src.copy('gitignore', '.gitignore');
             this.src.copy('npmignore', '.npmignore');
             this.src.copy('travis.yml', '.travis.yml');

@@ -1,3 +1,8 @@
+/**
+ * @file main test file
+ * @author nighca<nighca@live.cn>
+ */
+
 'use strict';
 
 var path = require('path');
@@ -27,7 +32,7 @@ describe('ecomfe-module:app', function () {
         runs(function() {
             assert.file([
                 '.editorconfig',
-                '.eslintrc',
+                '.fecsrc',
                 '.gitignore',
                 '.npmignore',
                 '.travis.yml',
@@ -59,7 +64,7 @@ describe('ecomfe-module:app', function () {
         runs(function() {
             assert.file([
                 '.editorconfig',
-                '.eslintrc',
+                '.fecsrc',
                 '.gitignore',
                 '.npmignore',
                 '.travis.yml',
@@ -91,7 +96,7 @@ describe('ecomfe-module:app', function () {
         runs(function() {
             assert.file([
                 '.editorconfig',
-                '.eslintrc',
+                '.fecsrc',
                 '.gitignore',
                 '.npmignore',
                 '.travis.yml',
