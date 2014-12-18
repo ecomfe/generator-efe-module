@@ -1,3 +1,8 @@
+/**
+ * @file main file of app
+ * @author nighca<nighca@live.cn>
+ */
+
 'use strict';
 
 var util = require('util');
@@ -10,13 +15,6 @@ var GitHubApi = require('github');
 var github = new GitHubApi({
     version: '3.0.0'
 });
-
-if (process.env.GITHUB_TOKEN) {
-    github.authenticate({
-        type: 'oauth',
-        token: process.env.GITHUB_TOKEN
-    });
-}
 
 var emptyGithubRes = {
     'name': '',
@@ -76,23 +74,6 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
                 done();
             }.bind(this));
-        },
-
-        askForDoInstall: function () {
-            var done = this.async();
-
-            var prompt = {
-                'type': 'confirm',
-                'name': 'doInstall',
-                'message': 'Install deps now?',
-                'default': true
-            };
-
-            this.prompt([prompt], function (props) {
-                this.doInstall = props.doInstall;
-
-                done();
-            }.bind(this));
         }
     },
 
@@ -129,7 +110,7 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
         projectfiles: function () {
             this.src.copy('editorconfig', '.editorconfig');
-            this.src.copy('eslintrc', '.eslintrc');
+            this.src.copy('fecsrc', '.fecsrc');
             this.src.copy('gitignore', '.gitignore');
             this.src.copy('npmignore', '.npmignore');
             this.src.copy('travis.yml', '.travis.yml');
@@ -138,12 +119,6 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
             this.template('_package.json', 'package.json');
             this.template('README.md');
-        }
-    },
-
-    end: function () {
-        if (!this.options['skip-install'] && this.doInstall) {
-            this.npmInstall();
         }
     }
 });
