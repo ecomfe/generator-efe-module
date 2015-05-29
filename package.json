@@ -7,9 +7,9 @@
     "generator-efe-module": "./bin/generator-efe-module"
   },
   "dependencies": {
-    "chalk": "^0.5.1",
-    "github": "^0.2.3",
-    "yeoman-generator": "^0.18.0",
+    "chalk": "^1.0.0",
+    "github": "^0.2.4",
+    "yeoman-generator": "^0.20.0",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
@@ -17,9 +17,6 @@
     "fecs": "*",
     "istanbul": "^0.3.2",
     "jasmine-node": "^1.14.5"
-  },
-  "peerDependencies": {
-    "yo": ">=1.0.0"
   },
   "scripts": {
     "lint": "fecs app/*.js lib cli test/**/*.spec.js --type=js",
