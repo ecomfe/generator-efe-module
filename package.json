@@ -1,6 +1,6 @@
 {
   "name": "generator-efe-module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "EFE-Style Node.js module generator for yeoman",
   "main": "app/index.js",
   "bin": {
