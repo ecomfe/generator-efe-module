@@ -5,7 +5,6 @@
 
 'use strict';
 
-var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
@@ -16,11 +15,13 @@ var github = new GitHubApi({
     version: '3.0.0'
 });
 
+/* eslint-disable fecs-camelcase */
 var emptyGithubRes = {
-    'name': '',
-    'email': '',
-    'html_url': ''
+    name: '',
+    email: '',
+    html_url: ''
 };
+/* eslint-enable fecs-camelcase */
 
 var githubUserInfo = function (name, cb, log) {
     github.user.getFrom({

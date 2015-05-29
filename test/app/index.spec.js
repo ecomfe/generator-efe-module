@@ -25,11 +25,11 @@ describe('ecomfe-module:app', function () {
                 });
         });
 
-        waitsFor(function() {
+        waitsFor(function () {
             return done;
         });
 
-        runs(function() {
+        runs(function () {
             assert.file([
                 '.editorconfig',
                 '.fecsrc',
@@ -57,11 +57,11 @@ describe('ecomfe-module:app', function () {
                 });
         });
 
-        waitsFor(function() {
+        waitsFor(function () {
             return done;
         });
 
-        runs(function() {
+        runs(function () {
             assert.file([
                 '.editorconfig',
                 '.fecsrc',
@@ -89,11 +89,11 @@ describe('ecomfe-module:app', function () {
                 });
         });
 
-        waitsFor(function() {
+        waitsFor(function () {
             return done;
         });
 
-        runs(function() {
+        runs(function () {
             assert.file([
                 '.editorconfig',
                 '.fecsrc',
