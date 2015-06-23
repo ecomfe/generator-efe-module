@@ -1,11 +1,12 @@
 <%= appname %>
 ========
 
-[![Build Status](https://travis-ci.org/ecomfe/<%= appname %>.svg)](http://travis-ci.org/ecomfe/<%= appname %>)
-[![NPM version](https://badge.fury.io/js/<%= appname %>.svg)](http://badge.fury.io/js/<%= appname %>)
-[![Coverage Status](https://coveralls.io/repos/ecomfe/<%= appname %>/badge.png)](https://coveralls.io/r/ecomfe/<%= appname %>)
-[![Dependencies](http://img.shields.io/david/ecomfe/<%= appname %>.svg?style=flat-square)](https://david-dm.org/ecomfe/<%= appname %>)
-[![DevDependencies](http://img.shields.io/david/dev/ecomfe/<%= appname %>.svg?style=flat-square)](https://david-dm.org/ecomfe/<%= appname %>)
+[![Build Status](https://img.shields.io/travis/ecomfe/<%= appname %>.svg?style=flat)](http://travis-ci.org/ecomfe/<%= appname %>)
+[![NPM version](https://img.shields.io/npm/v/<%= appname %>.svg?style=flat)](https://www.npmjs.com/package/<%= appname %>)
+[![Coverage Status](https://img.shields.io/coveralls/ecomfe/<%= appname %>.svg?style=flat)](https://coveralls.io/r/ecomfe/<%= appname %>)
+[![Dependencies](https://img.shields.io/david/ecomfe/<%= appname %>.svg?style=flat)](https://david-dm.org/ecomfe/<%= appname %>)
+[![DevDependencies](https://img.shields.io/david/dev/ecomfe/<%= appname %>.svg?style=flat)](https://david-dm.org/ecomfe/<%= appname %>)
+
 
 <%= appname %> is for ...
 
