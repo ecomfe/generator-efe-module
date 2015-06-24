@@ -9,6 +9,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
+var slugify = require("underscore.string/slugify");
 
 var GitHubApi = require('github');
 var github = new GitHubApi({
@@ -71,7 +72,7 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
             this.prompt([prompt], function (props) {
                 this.moduleName = props.moduleName;
-                this.appname = this._.slugify(props.moduleName);
+                this.appname = slugify(props.moduleName);
 
                 done();
             }.bind(this));
@@ -80,7 +81,8 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
     configuring: {
         enforceFolderName: function () {
-            if (this.appname !== this._.last(this.destinationRoot().split(path.sep))) {
+            var paths = this.destinationRoot().split(path.sep);
+            if (this.appname !== paths[paths.length - 1]) {
                 this.destinationRoot(this.appname);
             }
             this.config.save();
