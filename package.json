@@ -19,7 +19,7 @@
     "jasmine-node": "^1.14.5"
   },
   "scripts": {
-    "lint": "fecs app/*.js lib cli test/**/*.spec.js --type=js",
+    "lint": "fecs -v && fecs app/*.js lib cli test/**/*.spec.js --type=js",
     "coverage": "istanbul cover jasmine-node --captureExceptions test/**/*.spec.js",
     "test": "npm run lint && npm run coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"

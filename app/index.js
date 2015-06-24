@@ -16,11 +16,13 @@ var github = new GitHubApi({
     version: '3.0.0'
 });
 
+/* eslint-disable fecs-camelcase */
 var emptyGithubRes = {
-    'name': '',
-    'email': '',
-    'html_url': ''
+    name: '',
+    email: '',
+    html_url: ''
 };
+/* eslint-enable fecs-camelcase */
 
 var githubUserInfo = function (name, cb, log) {
     github.user.getFrom({
