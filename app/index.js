@@ -9,7 +9,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
-var slugify = require("underscore.string/slugify");
+var slugify = require('underscore.string/slugify');
 
 var GitHubApi = require('github');
 var github = new GitHubApi({
@@ -18,9 +18,9 @@ var github = new GitHubApi({
 
 /* eslint-disable fecs-camelcase */
 var emptyGithubRes = {
-    name: '',
-    email: '',
-    html_url: ''
+    'name': '',
+    'email': '',
+    'html_url': ''
 };
 /* eslint-enable fecs-camelcase */
 
@@ -103,25 +103,46 @@ var EcomfeModuleGenerator = yeoman.generators.Base.extend({
 
     writing: {
         app: function () {
-            this.dest.mkdir('bin');
-            this.dest.mkdir('lib');
-            this.dest.mkdir('test');
+            var copy = function (src, target) {
+                target = target || src;
+                this.fs.copy(
+                    this.templatePath(src),
+                    this.destinationPath(target)
+                );
+            }.bind(this);
 
-            this.src.copy('index.js', 'index.js');
-            this.src.copy('bin/bin', 'bin/' + this.appname);
+            copy('index.js', 'index.js');
+            copy('bin/bin', 'bin/' + this.appname);
         },
 
         projectfiles: function () {
-            this.src.copy('editorconfig', '.editorconfig');
-            this.src.copy('fecsrc', '.fecsrc');
-            this.src.copy('gitignore', '.gitignore');
-            this.src.copy('npmignore', '.npmignore');
-            this.src.copy('travis.yml', '.travis.yml');
+            var copy = function (src, target) {
+                target = target || src;
+                this.fs.copy(
+                    this.templatePath(src),
+                    this.destinationPath(target)
+                );
+            }.bind(this);
 
-            this.src.copy('LICENSE', 'LICENSE');
+            var template = function (src, target) {
+                target = target || src;
+                this.fs.copyTpl(
+                    this.templatePath(src),
+                    this.destinationPath(target),
+                    this
+                );
+            }.bind(this);
 
-            this.template('_package.json', 'package.json');
-            this.template('README.md');
+            copy('editorconfig', '.editorconfig');
+            copy('fecsrc', '.fecsrc');
+            copy('gitignore', '.gitignore');
+            copy('npmignore', '.npmignore');
+            copy('travis.yml', '.travis.yml');
+
+            copy('LICENSE', 'LICENSE');
+
+            template('_package.json', 'package.json');
+            template('README.md');
         }
     }
 });

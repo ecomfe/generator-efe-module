@@ -17,7 +17,7 @@ describe('ecomfe-module:app', function () {
         runs(function () {
             helpers.run(path.join(__dirname, '../../app'))
                 .inDir(path.join(os.tmpdir(), './temp-test1'))
-                .withPrompt({
+                .withPrompts({
                     githubUser: 'nighca',
                     moduleName: 'test-module'
                 }).on('end', function () {
@@ -49,7 +49,7 @@ describe('ecomfe-module:app', function () {
         runs(function () {
             helpers.run(path.join(__dirname, '../../app'))
                 .inDir(path.join(os.tmpdir(), './temp-test2'))
-                .withPrompt({
+                .withPrompts({
                     githubUser: 'nighca',
                     moduleName: 'temp-test2'
                 }).on('end', function () {
@@ -81,7 +81,7 @@ describe('ecomfe-module:app', function () {
         runs(function () {
             helpers.run(path.join(__dirname, '../../app'))
                 .inDir(path.join(os.tmpdir(), './temp-test3'))
-                .withPrompt({
+                .withPrompts({
                     githubUser: 'SOMEBODY_DOES_NOT_EXIST',
                     moduleName: 'test-module'
                 }).on('end', function () {
