@@ -6,6 +6,9 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "github": "^0.2.4",
+    "install": "^0.1.8",
+    "npm": "^2.11.3",
+    "underscore.string": "^3.1.1",
     "yeoman-generator": "^0.20.0",
     "yosay": "^1.0.0"
   },
@@ -16,7 +19,7 @@
     "jasmine-node": "^1.14.5"
   },
   "scripts": {
-    "lint": "fecs app/*.js lib cli test/**/*.spec.js --type=js",
+    "lint": "fecs -v && fecs app/*.js lib cli test/**/*.spec.js --type=js",
     "coverage": "istanbul cover jasmine-node --captureExceptions test/**/*.spec.js",
     "test": "npm run lint && npm run coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
@@ -25,7 +28,12 @@
     "type": "git",
     "url": "https://github.com/ecomfe/generator-efe-module.git"
   },
-  "keywords": ["ecomfe", "module", "yeoman", "generator"],
+  "keywords": [
+    "ecomfe",
+    "module",
+    "yeoman",
+    "generator"
+  ],
   "author": {
     "name": "Hanxing Yang",
     "email": "nighca@live.cn",
